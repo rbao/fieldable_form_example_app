@@ -1,0 +1,9 @@
+<div id="fields_section">
+  <%= f.fields_for :fields do |ff| %>
+    <%= render "product_forms/builder/#{ff.object.type.demodulize.underscore}", f: ff %>
+  <% end %>
+</div>
+
+<%= product_form_add_field f, "Add Text Field", :text_field, '#fields_section', 'product_forms/builder/text_field' %>
+<%= product_form_add_field f, "Add Drop Down", :drop_down, '#fields_section', 'product_forms/builder/drop_down' %>
+<%= product_form_add_field f, "Add Check Box", :check_box, '#fields_section', 'product_forms/builder/check_box' %>
