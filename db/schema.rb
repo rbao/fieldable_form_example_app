@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303222748) do
+ActiveRecord::Schema.define(:version => 20130322002903) do
 
   create_table "fieldable_form_fields", :force => true do |t|
     t.string   "name"
@@ -25,15 +25,11 @@ ActiveRecord::Schema.define(:version => 20130303222748) do
 
   add_index "fieldable_form_fields", ["fieldable_id"], :name => "index_fieldable_form_fields_on_fieldable_id"
 
-  create_table "fieldable_forms", :force => true do |t|
-    t.integer  "owner_id"
-    t.string   "owner_type"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "product_forms", :force => true do |t|
+    t.integer  "product_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
-
-  add_index "fieldable_forms", ["owner_id"], :name => "index_fieldable_forms_on_owner_id"
 
   create_table "product_types", :force => true do |t|
     t.string   "name"
